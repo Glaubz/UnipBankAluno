@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using ClientModel;
 using ClientControl;
-//using UnipBankInterfaces;
 
 namespace WindowsForms.Forms
 {
