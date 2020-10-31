@@ -23,6 +23,4 @@ A aplicação é um banco virtual básico para que o usuário possa depositar, s
 
 ## Diagrama de Classes
 
-![DiagramaDeClasses](https://github.com/Glaubz/UnipBankAluno/Assets/
-UnipBankDiagramaDeClasse.jpg)
-
+![DiagramaDeClasses](https://github.com/Glaubz/UnipBankAluno/Assets/UnipBankDiagramaDeClasse.jpg)
