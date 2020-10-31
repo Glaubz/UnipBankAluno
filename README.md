@@ -19,10 +19,10 @@ A aplicação é um banco virtual básico para que o usuário possa depositar, s
 
 ## Diagrama de Caso de Uso
 
-![DiagramaDeCasoDeUso](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/UnipBankCasoDeUso.jpg)
+![DiagramaDeCasoDeUso](https://github.com/Glaubz/UnipBankAluno/Assets/UnipBankCasoDeUso.jpg)
 
 ## Diagrama de Classes
 
-![DiagramaDeClasses](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/
+![DiagramaDeClasses](https://github.com/Glaubz/UnipBankAluno/Assets/
 UnipBankDiagramaDeClasse.jpg)
 
