@@ -48,7 +48,6 @@
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastrar);
-            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

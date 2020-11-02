@@ -17,9 +17,9 @@ namespace WindowsForms.Forms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            ClienteForm clienteForm = new ClienteForm();
-            clienteForm.MdiParent = this;
-            clienteForm.Show();
+            //ClienteForm clienteForm = new ClienteForm();
+            //clienteForm.MdiParent = this;
+            //clienteForm.Show();
         }
 
 

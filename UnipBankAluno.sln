@@ -19,10 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesktopAppController", "Des
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientControl", "Controller\DesktopAppController\ClientControl\ClientControl.csproj", "{1C136358-FCB8-4B21-93A1-6EC9A2BBEAA5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{0EA75E63-D7FD-415B-8628-C75283238148}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnipBankInterfaces", "Interface\Interfaces\UnipBankInterfaces\UnipBankInterfaces.csproj", "{AC474BFE-6061-4F87-8E73-50713E8160D6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +37,6 @@ Global
 		{1C136358-FCB8-4B21-93A1-6EC9A2BBEAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C136358-FCB8-4B21-93A1-6EC9A2BBEAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C136358-FCB8-4B21-93A1-6EC9A2BBEAA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC474BFE-6061-4F87-8E73-50713E8160D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC474BFE-6061-4F87-8E73-50713E8160D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC474BFE-6061-4F87-8E73-50713E8160D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC474BFE-6061-4F87-8E73-50713E8160D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,8 +47,6 @@ Global
 		{BC5BE5E5-42C6-40EF-80C2-30D9C03821BE} = {3A0F7A2D-2DD4-4355-BA48-CE186787F136}
 		{EB74EA8D-A281-4483-B1D8-9C63EE893354} = {6873C446-0BDD-444F-8EDD-D4F35A41FD2B}
 		{1C136358-FCB8-4B21-93A1-6EC9A2BBEAA5} = {EB74EA8D-A281-4483-B1D8-9C63EE893354}
-		{0EA75E63-D7FD-415B-8628-C75283238148} = {4F3A7511-07C3-47C8-AB1E-63EE905DFA33}
-		{AC474BFE-6061-4F87-8E73-50713E8160D6} = {0EA75E63-D7FD-415B-8628-C75283238148}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D55F966F-CD32-4CE6-B92D-B76E1F652CE6}

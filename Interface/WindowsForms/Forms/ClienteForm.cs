@@ -133,5 +133,10 @@ namespace WindowsForms.Forms
 
             btnAtualizar.Enabled = false;
         }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

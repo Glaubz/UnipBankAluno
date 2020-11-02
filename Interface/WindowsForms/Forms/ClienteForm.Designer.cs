@@ -127,6 +127,7 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(295, 23);
             this.txtCpf.TabIndex = 7;
+            this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
             // 
             // txtNome
             // 
