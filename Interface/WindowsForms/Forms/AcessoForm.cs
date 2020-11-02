@@ -24,7 +24,7 @@ namespace WindowsForms.Forms
             _mdlAcesso.Senha = txtSenha.Text;
 
             ctlAcesso _ctlAcesso = new ctlAcesso();
-            DataTable usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Nome);
+            var usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Nome);
 
             if (_mdlAcesso.Senha != usuarioAcesso.ToString())
             {
@@ -34,7 +34,9 @@ namespace WindowsForms.Forms
             {
                 ClienteForm clienteForm = new ClienteForm();
                 clienteForm.MdiParent = this;
-                clienteForm.Show();
+                this.Hide();
+                clienteForm.ShowDialog();
+                
             }
 
         }

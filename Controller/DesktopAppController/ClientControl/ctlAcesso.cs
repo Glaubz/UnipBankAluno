@@ -8,30 +8,41 @@ namespace ClientControl
 {
     public class ctlAcesso
     {
-        public DataTable UsuarioAcesso(string nome)
+        public string UsuarioAcesso(string nome)
         {
             //Manipulando dados de um BD Sql Server
 
-            SqlConnection SqlConnection = new SqlConnection(); //Cria uma conexão com bd
-            SqlConnection.ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True"; //Connection String do banco de dados para conectar ao projeto
+            SqlConnection SqlConnection = new SqlConnection();
+            SqlConnection.ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
             try
             {
-                SqlConnection.Open(); //Abre a conexão
+                SqlConnection.Open();
                 {
-                    SqlCommand SqlCom = new SqlCommand("SELECT usuario, senha FROM acesso WHERE usuario = @usuario", SqlConnection); //Cria um comando sql para trazer um resultado, precisa do parâmetro com a conexão do banco
+                    SqlCommand SqlCom = new SqlCommand("SELECT usuario, senha FROM acesso WHERE usuario = @usuario", SqlConnection);
                     SqlCom.Parameters.AddWithValue("@usuario", nome); //Coloca um valor à uma variável sql
-                    SqlDataAdapter adapter = new SqlDataAdapter(); //O Adaptador prepara para buscar os dados e preencher um DataSet 
-                    adapter.SelectCommand = SqlCom; //O adapter recebe o valor resultado do sql command que foi criado
-                    DataTable dtbCliente = new DataTable(); //DataTable é um tipo DataSet menos genérico
-                    adapter.Fill(dtbCliente); //Preenche o DataSet, DataTable no caso
-                    return dtbCliente; //Retorna o valor da consulta
+
+                    SqlDataReader reader = SqlCom.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return reader.GetSqlValue(1).ToString();
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                    
                 }
             }
             catch (Exception e)
             {
                 throw e;
             }
+            finally
+            {
+                SqlConnection.Close();
+            }
+
         }
 
 

@@ -42,20 +42,19 @@ namespace ClientControl
         public DataTable Lista()
         {
             //Define uma string de conexão com o banco de dados
-            SqlConnection SqlConn = new SqlConnection();
-            SqlConn.ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankProf;Integrated Security=True";
+            SqlConnection SqlConn = new SqlConnection(); //Cria uma conexão com bd
+            SqlConn.ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankProf;Integrated Security=True"; //Connection String do banco de dados para conectar ao projeto
 
             try
             {
-                //Abre a conxexão
-                SqlConn.Open();
+                SqlConn.Open(); //Abre a conexão
                 {
-                    SqlCommand SqlCmd = new SqlCommand("Select * from cliente", SqlConn);
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    adapter.SelectCommand = SqlCmd;
-                    DataTable dtbCliente = new DataTable();
-                    adapter.Fill(dtbCliente);
-                    return dtbCliente;
+                    SqlCommand SqlCmd = new SqlCommand("Select * from cliente", SqlConn); //Cria um comando sql para trazer um resultado, precisa do parâmetro com a conexão do banco
+                    SqlDataAdapter adapter = new SqlDataAdapter(); //O Adaptador prepara para buscar os dados e preencher um DataSet
+                    adapter.SelectCommand = SqlCmd; //O adapter recebe o valor resultado do sql command que foi criado
+                    DataTable dtbCliente = new DataTable(); //DataTable é um tipo DataSet menos genérico
+                    adapter.Fill(dtbCliente); //Preenche o DataSet, DataTable no caso
+                    return dtbCliente; //Retorna o valor da consulta
                 }
             }
             catch (Exception ex)

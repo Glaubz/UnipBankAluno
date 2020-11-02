@@ -17,7 +17,7 @@ namespace WindowsForms.Forms
             InitializeComponent();
             btnAtualizar.Enabled = false;
 
-            MessageBox.Show("Salvo com sucesso!! ");
+            //MessageBox.Show("Salvo com sucesso!! ");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
