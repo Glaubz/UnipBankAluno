@@ -28,4 +28,8 @@ A aplicação é um banco virtual básico para que o usuário possa depositar, s
 
 ## Diagrama de Sequência
 
-![UnipBankDiagramaDeSequencia](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/UnipBankDiagramaDeSequencia.png)
+![DiagramaDeSequencia](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/UnipBankDiagramaDeSequencia.png)
+
+## Diagrama de Sequência
+
+![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/diagramaBancoDeDados.png)
