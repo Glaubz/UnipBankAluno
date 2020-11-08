@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientControl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,8 @@ namespace WindowsForms.Forms
         public SaqueForm()
         {
             InitializeComponent();
-
-            lblValor.Text = ValorEmConta();
+            ctlSaque ctlSaque = new ctlSaque();
+            //lblValor.Text = ctlSaque.ValorEmConta();
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -24,9 +25,5 @@ namespace WindowsForms.Forms
             menuTela.Show();
         }
 
-        private void lblValor_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

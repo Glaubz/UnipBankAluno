@@ -141,3 +141,31 @@ ALTER TABLE conta ALTER COLUMN maxDinheiro DECIMAL(9,2)
 ALTER TABLE conta ALTER COLUMN valorMensal DECIMAL(5,2)
 
 UPDATE conta SET maxDinheiro = 1000000.00 WHERE numeroConta = '10100-5'
+
+--Procedure para pegar dado completo do cliente
+CREATE PROCEDURE SP_InsertInCode
+	@Login VARCHAR(30)
+	AS
+	SELECT cl.cpf, cl.nome, cl.nr_rua, cl.renda, cl.dt_nasc,
+	ac.idAcesso, ac.usuario, 
+	co.numeroConta, co.tipoConta, co.valorMensal, co.maxDinheiro, co.saldo
+	FROM cliente cl
+	JOIN acesso ac ON ac.idAcesso = cl.idAcesso
+	JOIN conta co ON co.numeroConta = cl.conta
+	WHERE ac.usuario like @Login
+
+--verificar
+SELECT cl.cpf, cl.nome, cl.nr_rua, cl.renda, cl.dt_nasc,
+ac.idAcesso, ac.usuario, 
+co.numeroConta, co.tipoConta, co.valorMensal, co.maxDinheiro, co.saldo
+FROM cliente cl
+JOIN acesso ac ON ac.idAcesso = cl.idAcesso
+JOIN conta co ON co.numeroConta = cl.conta
+WHERE ac.usuario like 'mago'
+
+--Query para pegar infos da conta com o login de parametro
+SELECT co.numeroConta, co.tipoConta, co.maxDinheiro, co.valorMensal, co.saldo
+FROM conta co
+JOIN cliente cl ON co.numeroConta = cl.conta
+JOIN acesso ac ON ac.idAcesso = cl.idAcesso
+WHERE ac.usuario = @Login --'mago'

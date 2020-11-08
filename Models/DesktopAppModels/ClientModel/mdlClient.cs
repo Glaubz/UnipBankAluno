@@ -13,5 +13,7 @@ namespace ClientModel
         public int nr_rua { get; set; }
         public String dt_nasc { get; set; }
         public Double renda { get; set; }
+        public mdlConta Conta { get; set; }
+        public mdlAcesso Acesso { get; set; }
     }
 }

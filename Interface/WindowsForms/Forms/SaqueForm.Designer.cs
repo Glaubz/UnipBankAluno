@@ -54,7 +54,6 @@
             this.lblValor.Size = new System.Drawing.Size(61, 23);
             this.lblValor.TabIndex = 1;
             this.lblValor.Text = "<valor>";
-            this.lblValor.Click += new System.EventHandler(this.lblValor_Click);
             // 
             // textBox1
             // 

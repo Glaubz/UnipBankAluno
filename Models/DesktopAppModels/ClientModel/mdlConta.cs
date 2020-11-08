@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClientModel
 {
-    class mdlConta
+    public class mdlConta
     {
         public string NumeroConta { get; set; }
         public int TipoConta { get; set; }

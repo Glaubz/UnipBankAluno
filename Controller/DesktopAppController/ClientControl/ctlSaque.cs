@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ClientControl
 {
-    class ctlSaque
+    public class ctlSaque
     {
         string ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
