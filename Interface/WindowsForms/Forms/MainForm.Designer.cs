@@ -28,29 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnSaque = new System.Windows.Forms.Button();
+            this.btnDeposito = new System.Windows.Forms.Button();
+            this.btnTransferencia = new System.Windows.Forms.Button();
+            this.btnExtrato = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCadastrar
+            // btnSaque
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(2, 3);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(195, 33);
-            this.btnCadastrar.TabIndex = 1;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnSaque.Location = new System.Drawing.Point(87, 42);
+            this.btnSaque.Name = "btnSaque";
+            this.btnSaque.Size = new System.Drawing.Size(195, 23);
+            this.btnSaque.TabIndex = 1;
+            this.btnSaque.Text = "Saque";
+            this.btnSaque.UseVisualStyleBackColor = true;
+            this.btnSaque.Click += new System.EventHandler(this.btnSaque_Click);
+            // 
+            // btnDeposito
+            // 
+            this.btnDeposito.Location = new System.Drawing.Point(87, 89);
+            this.btnDeposito.Name = "btnDeposito";
+            this.btnDeposito.Size = new System.Drawing.Size(195, 23);
+            this.btnDeposito.TabIndex = 2;
+            this.btnDeposito.Text = "Deposito";
+            this.btnDeposito.UseVisualStyleBackColor = true;
+            this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
+            // 
+            // btnTransferencia
+            // 
+            this.btnTransferencia.Location = new System.Drawing.Point(87, 137);
+            this.btnTransferencia.Name = "btnTransferencia";
+            this.btnTransferencia.Size = new System.Drawing.Size(195, 23);
+            this.btnTransferencia.TabIndex = 3;
+            this.btnTransferencia.Text = "Transferencia";
+            this.btnTransferencia.UseVisualStyleBackColor = true;
+            this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
+            // 
+            // btnExtrato
+            // 
+            this.btnExtrato.Location = new System.Drawing.Point(87, 183);
+            this.btnExtrato.Name = "btnExtrato";
+            this.btnExtrato.Size = new System.Drawing.Size(195, 23);
+            this.btnExtrato.TabIndex = 4;
+            this.btnExtrato.Text = "Extrato";
+            this.btnExtrato.UseVisualStyleBackColor = true;
+            this.btnExtrato.Click += new System.EventHandler(this.btnExtrato_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCadastrar);
+            this.ClientSize = new System.Drawing.Size(371, 250);
+            this.Controls.Add(this.btnExtrato);
+            this.Controls.Add(this.btnTransferencia);
+            this.Controls.Add(this.btnDeposito);
+            this.Controls.Add(this.btnSaque);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
@@ -58,5 +94,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnSaque;
+        private System.Windows.Forms.Button btnDeposito;
+        private System.Windows.Forms.Button btnTransferencia;
+        private System.Windows.Forms.Button btnExtrato;
     }
 }

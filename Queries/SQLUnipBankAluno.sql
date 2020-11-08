@@ -35,13 +35,65 @@ ADD CONSTRAINT conta_tipoConta
 FOREIGN KEY (tipoConta)
 REFERENCES tipoConta(id)
 
+CREATE PROCEDURE SP_InsertClient
+	@SP_cpf VARCHAR(11),
+	@SP_nome VARCHAR(30),
+	@SP_rua VARCHAR(30),
+	@SP_nr_rua INT,
+	@SP_dt_nasc VARCHAR(10),
+	@SP_renda DECIMAL(10,2),
+	@SP_numConta VARCHAR(20),
+	@SP_tipoConta INT,
+	@SP_maxDinheiro DECIMAL(8,2) = 0,
+	@SP_valorMensal DECIMAL(4,2) = 0,
+	@SP_usuario VARCHAR(30),
+	@SP_senha VARCHAR(30)
+	
+	AS
+
+	--Condições para definir as configurações de cada tipo de conta --Deu certo nao, dps vejo TODO
+	IF @SP_tipoConta = 1
+		BEGIN
+			SET @SP_maxDinheiro = 5000.00;
+			SET @SP_valorMensal = 15.00;
+		END
+	ELSE IF @SP_tipoConta = 2
+		BEGIN
+			SET @SP_maxDinheiro = 10000.00;
+			SET @SP_valorMensal = 50.00;
+		END
+	ELSE
+		BEGIN
+			SET @SP_maxDinheiro = 1000000.00;
+			SET @SP_valorMensal = 100.00;
+		END
+
+	INSERT INTO conta(numeroConta, tipoConta, saldo)
+	VALUES (@SP_numConta, @SP_tipoConta, 0);
+	--SELECT @SP_numConta = @@IDENTITY
+	INSERT INTO acesso(usuario, senha)
+	VALUES (@SP_usuario, @SP_senha);
+	DECLARE @SP_idAcesso INT = SCOPE_IDENTITY();
+	INSERT INTO cliente (cpf, nome, rua, nr_rua, dt_nasc, renda, conta, idAcesso)
+	VALUES (@SP_cpf, @SP_nome, @SP_rua, @SP_nr_rua, @SP_dt_nasc, @SP_renda, @SP_numConta, @SP_idAcesso);
+	RETURN
+
+--Excluir Procedure do banco
+DROP PROCEDURE SP_InsertClient;
+
+--Vendo clientes e contas
+SELECT * FROM cliente cl 
+JOIN conta c ON cl.conta = c.numeroConta
+JOIN acesso ac ON ac.idAcesso = cl.idAcesso
+
 SELECT * FROM cliente
+SELECT * FROM conta
 
 --Colocando tipoConta como não nulo
 ALTER TABLE conta ALTER COLUMN tipoConta INT NOT NULL
 
 --Inserindo valores à coluna nome
-INSERT INTO tipoConta (nome) VALUES ('Comum'), ('Popanca'), ('Especial')
+INSERT INTO tipoConta (nome) VALUES ('Comum'), ('Poupanca'), ('Especial')
 
 --Alterando o nome de um valor com Update
 UPDATE tipoConta SET nome = 'Poupanca' WHERE nome = 'Popanca'
@@ -79,6 +131,13 @@ INSERT INTO acesso (usuario, senha)
 
 --WHERE cpf like '40400850042'
 
-SELECT * FROM cliente
+SELECT * FROM conta
 
 SELECT usuario, senha FROM acesso WHERE usuario = 'glaubz'
+
+ALTER TABLE conta ADD saldo DECIMAL(8,2)
+
+ALTER TABLE conta ALTER COLUMN maxDinheiro DECIMAL(9,2)
+ALTER TABLE conta ALTER COLUMN valorMensal DECIMAL(5,2)
+
+UPDATE conta SET maxDinheiro = 1000000.00 WHERE numeroConta = '10100-5'

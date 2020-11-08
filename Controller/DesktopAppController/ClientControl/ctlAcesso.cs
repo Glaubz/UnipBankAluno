@@ -8,10 +8,11 @@ namespace ClientControl
 {
     public class ctlAcesso
     {
-        public string UsuarioAcesso(string nome)
+        public Dictionary<int, string> UsuarioAcesso(string nome)
         {
             //Manipulando dados de um BD Sql Server
 
+            Dictionary<int, string> retorno = new Dictionary<int, string>();
             SqlConnection SqlConnection = new SqlConnection();
             SqlConnection.ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
@@ -25,18 +26,21 @@ namespace ClientControl
                     SqlDataReader reader = SqlCom.ExecuteReader();
                     if (reader.Read())
                     {
-                        return reader.GetSqlValue(1).ToString();
+                        retorno.Add(1, "Conexão com o Banco Realizada com sucesso!");
+                        return retorno;
                     }
                     else
                     {
-                        return "";
+                        retorno.Add(0, "Usuário ou senha incorretos!");
+                        return retorno;
                     }
                     
                 }
             }
             catch (Exception e)
             {
-                throw e;
+                retorno.Add(0, e.Message);
+                return retorno;
             }
             finally
             {

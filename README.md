@@ -8,6 +8,8 @@ A aplicação é um banco virtual básico para que o usuário possa depositar, s
 
 - RNF01 - Para fazer as outras funcionalidades do aplicativo deve-se abrir outras telas.
 - RNF02 - O tipo da conta é definido pelo funcionário ao cadastrar a conta no banco.
+- RNF03 - Cada tipo de conta obtém um limite de saldo diferente.
+- RNF04 - Cada tipo de conta difere no custo mensal.
 
 ## Requisitos Funcionais
 

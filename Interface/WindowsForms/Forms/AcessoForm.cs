@@ -24,18 +24,18 @@ namespace WindowsForms.Forms
             _mdlAcesso.Senha = txtSenha.Text;
 
             ctlAcesso _ctlAcesso = new ctlAcesso();
-            var usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Nome);
+            Dictionary<int, string> usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Nome);
 
-            if (_mdlAcesso.Senha != usuarioAcesso.ToString())
+            string mensagem;
+            if (usuarioAcesso.TryGetValue(0, out mensagem))
             {
-                MessageBox.Show("Senha incorreta, tente novamente");
+                MessageBox.Show(mensagem);
             }
             else
             {
-                ClienteForm clienteForm = new ClienteForm();
-                clienteForm.MdiParent = this;
                 this.Hide();
-                clienteForm.ShowDialog();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
                 
             }
 

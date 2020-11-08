@@ -81,14 +81,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(443, 203);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
-            this.IsMdiContainer = true;
             this.Name = "AcessoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AcessoForm";

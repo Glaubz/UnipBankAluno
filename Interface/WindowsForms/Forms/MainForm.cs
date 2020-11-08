@@ -15,14 +15,32 @@ namespace WindowsForms.Forms
             InitializeComponent();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnSaque_Click(object sender, EventArgs e)
         {
-            //ClienteForm clienteForm = new ClienteForm();
-            //clienteForm.MdiParent = this;
-            //clienteForm.Show();
+            this.Hide();
+            SaqueForm saqueTela = new SaqueForm();
+            saqueTela.Show();
         }
 
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DepositoForm depositoTela = new DepositoForm();
+            depositoTela.Show();
+        }
 
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TransferenciaForm transferenciaTela = new TransferenciaForm();
+            transferenciaTela.Show();
+        }
 
+        private void btnExtrato_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ExtratoForm extratoTela = new ExtratoForm();
+            extratoTela.Show();
+        }
     }
 }
