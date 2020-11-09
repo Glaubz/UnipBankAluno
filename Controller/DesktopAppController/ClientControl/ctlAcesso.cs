@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,6 +9,8 @@ namespace ClientControl
 {
     public class ctlAcesso
     {
+        public mdlClient Cliente { get; set; }
+
         string ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
         public Dictionary<int, string> UsuarioAcesso(string nome)
@@ -60,7 +63,13 @@ namespace ClientControl
             {
                 SqlConn.Open();
                 {
-                    SqlCommand SqlCom = new SqlCommand("SP_InsertInCode", SqlConn);
+                    SqlCommand SqlCom = new SqlCommand("SELECT cl.cpf, cl.nome, cl.nr_rua, cl.rua, cl.renda, cl.dt_nasc, " +
+                                                                "ac.idAcesso, ac.usuario, " +
+                                                                "co.numeroConta, co.tipoConta, co.valorMensal, co.maxDinheiro, co.saldo " +
+                                                                "FROM cliente cl " +
+                                                                "JOIN acesso ac ON ac.idAcesso = cl.idAcesso " +
+                                                                "JOIN conta co ON co.numeroConta = cl.conta " +
+                                                                "WHERE ac.usuario like @Login", SqlConn);
                     SqlCom.Parameters.AddWithValue("@Login", login);
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     adapter.SelectCommand = SqlCom;
@@ -78,6 +87,30 @@ namespace ClientControl
                 SqlConn.Close();
             }
 
+        }
+
+        public void ConstructClient(mdlAcesso _mdlAcesso)
+        {
+            ctlAcesso _ctlAcesso = new ctlAcesso();
+            DataTable usuario = _ctlAcesso.InfoUsuario(_mdlAcesso.Usuario);
+            ctlConta _ctlConta = new ctlConta();
+            mdlClient cliente = new mdlClient
+            {
+                Acesso = _mdlAcesso,
+                Conta = _ctlConta.ObterConta(_mdlAcesso.Usuario), //ObtemConta
+                cpf = usuario.Rows[0]["cpf"].ToString(),
+                nome = usuario.Rows[0]["nome"].ToString(),
+                nr_rua = Convert.ToInt32(usuario.Rows[0]["nr_rua"]),
+                rua = usuario.Rows[0]["rua"].ToString(),
+                renda = double.Parse(usuario.Rows[0]["renda"].ToString()),
+                dt_nasc = usuario.Rows[0]["dt_nasc"].ToString(),
+            };
+            Cliente = cliente;
+        }
+
+        public mdlClient GetCliente()
+        {
+            return Cliente;
         }
 
     }

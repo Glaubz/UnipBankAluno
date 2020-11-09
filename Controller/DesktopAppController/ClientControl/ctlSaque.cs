@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Net.Http;
 using System.Text;
+using ClientModel;
 
 namespace ClientControl
 {
@@ -28,6 +29,8 @@ namespace ClientControl
                     DataSet saldo = new DataSet();
                     adapter.Fill(saldo);
                     return saldo;
+
+                    
                 }
             }
             catch (Exception e)

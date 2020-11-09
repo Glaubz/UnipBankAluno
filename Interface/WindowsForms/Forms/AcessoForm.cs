@@ -38,23 +38,13 @@ namespace WindowsForms.Forms
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-                
-                DataTable usuario = _ctlAcesso.InfoUsuario(_mdlAcesso.Usuario);
-                ctlConta _ctlConta = new ctlConta();
-                mdlClient cliente = new mdlClient
-                {
-                    Acesso = _mdlAcesso,
-                    Conta = _ctlConta.ObterConta(_mdlAcesso.Usuario), //ObtemConta
-                    cpf = usuario.Rows[0]["cpf"].ToString(),
-                    nome = usuario.Rows[0]["nome"].ToString(),
-                    nr_rua = Convert.ToInt32(usuario.Rows[0]["nr_rua"]),
-                    renda = double.Parse(usuario.Rows[0]["renda"].ToString()),
-                    dt_nasc = usuario.Rows[0]["dt_nasc"].ToString(),
-                };
+                _ctlAcesso.ConstructClient(_mdlAcesso); //Constrói o cliente com os dados do banco
+                mdlClient cliente = _ctlAcesso.GetCliente();
             }
 
         }
 
+        
 
     }
 }

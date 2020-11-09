@@ -93,7 +93,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnSaque;
         private System.Windows.Forms.Button btnDeposito;
         private System.Windows.Forms.Button btnTransferencia;

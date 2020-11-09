@@ -10,5 +10,6 @@ namespace ClientModel
         public int TipoConta { get; set; }
         public double MaxDinheiro { get; set; }
         public double ValorMensal { get; set; }
+        public double Saldo { get; set; }
     }
 }

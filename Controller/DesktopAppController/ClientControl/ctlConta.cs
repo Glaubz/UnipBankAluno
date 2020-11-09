@@ -24,7 +24,7 @@ namespace ClientControl
                                                             "FROM conta co " +
                                                             "JOIN cliente cl ON co.numeroConta = cl.conta " +
                                                             "JOIN acesso ac ON ac.idAcesso = cl.idAcesso " +
-                                                            "WHERE ac.usuario = @Login");
+                                                            "WHERE ac.usuario = @Login", SqlConn);
                     SqlCom.Parameters.AddWithValue("@Login", usuario);
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     adapter.SelectCommand = SqlCom;
@@ -47,7 +47,6 @@ namespace ClientControl
         public mdlConta ObterConta(string usuario)
         {
             DataTable contaDT = ObterContaDoBD(usuario);
-
             mdlConta conta = new mdlConta()
             {
                 NumeroConta = contaDT.Rows[0]["numeroConta"].ToString(),

@@ -15,7 +15,9 @@ namespace WindowsForms.Forms
         {
             InitializeComponent();
             ctlSaque ctlSaque = new ctlSaque();
-            //lblValor.Text = ctlSaque.ValorEmConta();
+            
+            var teste = "teste";
+            lblValor.Text = cliente.Conta.Saldo.ToString();
         }
 
         private void btnMain_Click(object sender, EventArgs e)
