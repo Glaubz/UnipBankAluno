@@ -30,9 +30,10 @@
         {
             this.lblValorEmConta = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValorSaque = new System.Windows.Forms.TextBox();
             this.lblValorDeSaque = new System.Windows.Forms.Label();
             this.btnMain = new System.Windows.Forms.Button();
+            this.btnSacar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblValorEmConta
@@ -55,13 +56,13 @@
             this.lblValor.TabIndex = 1;
             this.lblValor.Text = "<valor>";
             // 
-            // textBox1
+            // txtValorSaque
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 269);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorSaque.Location = new System.Drawing.Point(45, 269);
+            this.txtValorSaque.Name = "txtValorSaque";
+            this.txtValorSaque.Size = new System.Drawing.Size(191, 23);
+            this.txtValorSaque.TabIndex = 2;
+            this.txtValorSaque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblValorDeSaque
             // 
@@ -83,15 +84,26 @@
             this.btnMain.UseVisualStyleBackColor = true;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
+            // btnSacar
+            // 
+            this.btnSacar.Location = new System.Drawing.Point(106, 307);
+            this.btnSacar.Name = "btnSacar";
+            this.btnSacar.Size = new System.Drawing.Size(75, 23);
+            this.btnSacar.TabIndex = 5;
+            this.btnSacar.Text = "Sacar";
+            this.btnSacar.UseVisualStyleBackColor = true;
+            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
+            // 
             // SaqueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(277, 450);
+            this.Controls.Add(this.btnSacar);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblValorDeSaque);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtValorSaque);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblValorEmConta);
             this.Name = "SaqueForm";
@@ -106,8 +118,9 @@
 
         private System.Windows.Forms.Label lblValorEmConta;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValorSaque;
         private System.Windows.Forms.Label lblValorDeSaque;
         private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Button btnSacar;
     }
 }

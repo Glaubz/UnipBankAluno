@@ -13,7 +13,7 @@ namespace ClientControl
 
         string ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
-        public Dictionary<int, string> UsuarioAcesso(string nome)
+        public Dictionary<int, string> UsuarioAcesso(string nome, string senha)
         {
             //Manipulando dados de um BD Sql Server
 
@@ -25,8 +25,9 @@ namespace ClientControl
             {
                 SqlConn.Open();
                 {
-                    SqlCommand SqlCom = new SqlCommand("SELECT usuario, senha FROM acesso WHERE usuario = @usuario", SqlConn);
-                    SqlCom.Parameters.AddWithValue("@usuario", nome); 
+                    SqlCommand SqlCom = new SqlCommand("SELECT usuario, senha FROM acesso WHERE usuario = @usuario AND senha = @senha", SqlConn);
+                    SqlCom.Parameters.AddWithValue("@usuario", nome);
+                    SqlCom.Parameters.AddWithValue("@senha", senha);
 
                     SqlDataReader reader = SqlCom.ExecuteReader();
                     if (reader.Read())

@@ -31,6 +31,7 @@
             this.txtValorDeposito = new System.Windows.Forms.TextBox();
             this.lblDeposito = new System.Windows.Forms.Label();
             this.btnMain = new System.Windows.Forms.Button();
+            this.btnDepositar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtValorDeposito
@@ -61,12 +62,23 @@
             this.btnMain.UseVisualStyleBackColor = true;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
+            // btnDepositar
+            // 
+            this.btnDepositar.Location = new System.Drawing.Point(99, 221);
+            this.btnDepositar.Name = "btnDepositar";
+            this.btnDepositar.Size = new System.Drawing.Size(81, 23);
+            this.btnDepositar.TabIndex = 3;
+            this.btnDepositar.Text = "Depositar";
+            this.btnDepositar.UseVisualStyleBackColor = true;
+            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
+            // 
             // DepositoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(279, 450);
+            this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblDeposito);
             this.Controls.Add(this.txtValorDeposito);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.TextBox txtValorDeposito;
         private System.Windows.Forms.Label lblDeposito;
         private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Button btnDepositar;
     }
 }

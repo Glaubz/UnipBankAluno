@@ -11,6 +11,35 @@ namespace ClientControl
     {
         string ConnectionString = @"Data Source=DESKTOP-G3S4QVO\SQLEXPRESS;Initial Catalog=UnipBankAluno;Integrated Security=True";
 
+        public decimal ValorEmConta(string usuario)
+        {
+            SqlConnection SqlConn = new SqlConnection();
+            SqlConn.ConnectionString = ConnectionString;
+
+            try
+            {
+                SqlConn.Open();
+                {
+                    SqlCommand SqlCom = new SqlCommand(@"SELECT * 
+                                                        FROM conta co 
+                                                        JOIN cliente cl ON cl.conta = co.numeroConta 
+                                                        JOIN acesso ac ON ac.idAcesso = cl.idAcesso 
+                                                        WHERE ac.usuario = @usuario", SqlConn);
+                    //SqlCom.CommandType = CommandType.StoredProcedure;
+                    SqlCom.Parameters.AddWithValue("@usuario", usuario);
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = SqlCom;
+                    DataTable saldo = new DataTable();
+                    adapter.Fill(saldo);
+                    return (decimal)saldo.Rows[0]["saldo"];
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         private DataTable ObterContaDoBD(string usuario)
         {
             SqlConnection SqlConn = new SqlConnection();

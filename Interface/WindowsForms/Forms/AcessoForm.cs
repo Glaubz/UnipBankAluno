@@ -25,8 +25,10 @@ namespace WindowsForms.Forms
                 Senha = txtSenha.Text
             };
 
+            Context.Usuario = txtUsuario.Text;
+
             ctlAcesso _ctlAcesso = new ctlAcesso();
-            Dictionary<int, string> usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Usuario);
+            Dictionary<int, string> usuarioAcesso = _ctlAcesso.UsuarioAcesso(_mdlAcesso.Usuario, _mdlAcesso.Senha);
 
             string mensagem;
             if (usuarioAcesso.TryGetValue(0, out mensagem))
