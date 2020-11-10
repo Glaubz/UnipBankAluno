@@ -152,7 +152,7 @@ UPDATE conta SET maxDinheiro = 1000000.00 WHERE numeroConta = '10100-5'
 	FROM cliente cl
 	JOIN acesso ac ON ac.idAcesso = cl.idAcesso
 	JOIN conta co ON co.numeroConta = cl.conta
-	WHERE ac.usuario like @Login
+	WHERE ac.usuario like 'mago'@Login
 
 DROP PROCEDURE SP_InsertInCode
 
@@ -172,3 +172,7 @@ JOIN cliente cl ON co.numeroConta = cl.conta
 JOIN acesso ac ON ac.idAcesso = cl.idAcesso
 WHERE ac.usuario = 'mago'
 
+SELECT co.* FROM conta co
+JOIN cliente cl ON cl.conta = co.numeroConta
+JOIN acesso ac ON ac.idAcesso = cl.idAcesso
+WHERE ac.usuario = 'mago'

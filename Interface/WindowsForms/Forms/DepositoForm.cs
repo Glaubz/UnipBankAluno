@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using ClientControl;
 
 namespace WindowsForms.Forms
 {
@@ -13,6 +14,9 @@ namespace WindowsForms.Forms
         public DepositoForm()
         {
             InitializeComponent();
+
+            ctlConta _ctlConta = new ctlConta();
+            lblValor.Text = _ctlConta.ValorEmConta(Context.Usuario).ToString();
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -24,7 +28,17 @@ namespace WindowsForms.Forms
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
+            ctlDeposito _ctlDeposito = new ctlDeposito();
 
+            try
+            {
+                decimal valorSaque = decimal.Parse(txtValorDeposito.Text);
+                lblValor.Text = _ctlDeposito.Depositar(valorSaque, Context.Usuario).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex?.InnerException?.Message ?? ex?.Message);
+            }
         }
     }
 }
