@@ -38,24 +38,25 @@ A aplicação é um banco virtual básico para que o usuário possa depositar, s
 
 ## Tela de Acesso
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaAcesso.png)
+![TelaDeAcesso](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaAcesso.png)
 
 ## Tela de Menu
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaMenu.png)
+![TelaDeMenu](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaMenu.png)
 
 ## Tela de Saque
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaSaque.png)
+![TelaDeSaque](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaSaque.png)
 
 ## Tela de Deposito
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaDeposito.png)
+![TelaDeDeposito](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaDeposito.png)
 
 ## Tela de Transferencia
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaTransferencia.png)
+![TelaDeTransferencia](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaTransferencia.png)
 
 ## Tela de Extrato
 
-![DiagramaDeBancoDeDados](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaExtrato.png)
+![TelaDeExtrato](https://github.com/Glaubz/UnipBankAluno/tree/master/Assets/Telas/TelaExtrato.png)
+
