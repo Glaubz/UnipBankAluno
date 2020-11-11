@@ -32,6 +32,7 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.dgvLogs = new System.Windows.Forms.DataGridView();
             this.btnMain = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.lblSaldoEmConta.AutoSize = true;
             this.lblSaldoEmConta.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSaldoEmConta.Location = new System.Drawing.Point(72, 69);
+            this.lblSaldoEmConta.Location = new System.Drawing.Point(72, 21);
             this.lblSaldoEmConta.Name = "lblSaldoEmConta";
             this.lblSaldoEmConta.Size = new System.Drawing.Size(140, 21);
             this.lblSaldoEmConta.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblValor.Location = new System.Drawing.Point(99, 108);
+            this.lblValor.Location = new System.Drawing.Point(99, 60);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(80, 25);
             this.lblValor.TabIndex = 1;
@@ -58,11 +59,12 @@
             // dgvLogs
             // 
             this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLogs.Location = new System.Drawing.Point(12, 162);
+            this.dgvLogs.Location = new System.Drawing.Point(12, 114);
             this.dgvLogs.Name = "dgvLogs";
             this.dgvLogs.Size = new System.Drawing.Size(255, 223);
             this.dgvLogs.TabIndex = 2;
             this.dgvLogs.Text = "dataGridView1";
+            this.dgvLogs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLogs_CellContentClick);
             // 
             // btnMain
             // 
@@ -74,12 +76,22 @@
             this.btnMain.UseVisualStyleBackColor = true;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(99, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ExtratoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(279, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.dgvLogs);
             this.Controls.Add(this.lblValor);
@@ -99,5 +111,6 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.DataGridView dgvLogs;
         private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Button button1;
     }
 }

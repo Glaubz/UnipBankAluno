@@ -36,6 +36,10 @@ namespace ClientControl
             }
             catch (Exception ex)
             {
+                string message = ex.Message;
+                if (message.Contains( @"Erro de estouro aritmético ao converter numeric no tipo de dados numeric"))
+                    throw new Exception("O valor de deposito faz com que o saldo ultrapasse o limite");
+
                 throw ex;
             }
             finally

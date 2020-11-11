@@ -152,11 +152,11 @@ UPDATE conta SET maxDinheiro = 1000000.00 WHERE numeroConta = '10100-5'
 	FROM cliente cl
 	JOIN acesso ac ON ac.idAcesso = cl.idAcesso
 	JOIN conta co ON co.numeroConta = cl.conta
-	WHERE ac.usuario like 'mago'@Login
+	WHERE ac.usuario like 'mago' --@Login
 
 DROP PROCEDURE SP_InsertInCode
 
---verificar
+--verificar dados importantes da conta e usar para verificar transferencia
 SELECT cl.cpf, cl.nome, cl.nr_rua, cl.rua, cl.renda, cl.dt_nasc,
 ac.idAcesso, ac.usuario, 
 co.numeroConta, co.tipoConta, co.valorMensal, co.maxDinheiro, co.saldo
@@ -164,6 +164,7 @@ FROM cliente cl
 JOIN acesso ac ON ac.idAcesso = cl.idAcesso
 JOIN conta co ON co.numeroConta = cl.conta
 WHERE ac.usuario like 'mago'
+OR ac.usuario like 'glaubz'
 
 --Query para pegar infos da conta com o login de parametro
 SELECT co.numeroConta, co.tipoConta, co.maxDinheiro, co.valorMensal, co.saldo
@@ -176,3 +177,8 @@ SELECT co.* FROM conta co
 JOIN cliente cl ON cl.conta = co.numeroConta
 JOIN acesso ac ON ac.idAcesso = cl.idAcesso
 WHERE ac.usuario = 'mago'
+
+--valida destinatario
+SELECT ac.usuario, cl.nome FROM acesso ac
+JOIN cliente cl ON cl.idAcesso = ac.idAcesso
+

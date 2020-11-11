@@ -30,19 +30,18 @@
         {
             this.lblTransferencia = new System.Windows.Forms.Label();
             this.txtValorTransferencia = new System.Windows.Forms.TextBox();
-            this.lblCpfDestinatario = new System.Windows.Forms.Label();
-            this.lblNumConta = new System.Windows.Forms.Label();
-            this.txtCpfDestinatario = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblNomeDestinatario = new System.Windows.Forms.Label();
+            this.txtNomeDestinatario = new System.Windows.Forms.TextBox();
             this.lblDestinatario = new System.Windows.Forms.Label();
             this.btnMain = new System.Windows.Forms.Button();
+            this.btnTransferir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTransferencia
             // 
             this.lblTransferencia.AutoSize = true;
             this.lblTransferencia.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTransferencia.Location = new System.Drawing.Point(92, 99);
+            this.lblTransferencia.Location = new System.Drawing.Point(93, 81);
             this.lblTransferencia.Name = "lblTransferencia";
             this.lblTransferencia.Size = new System.Drawing.Size(94, 21);
             this.lblTransferencia.TabIndex = 0;
@@ -50,52 +49,35 @@
             // 
             // txtValorTransferencia
             // 
-            this.txtValorTransferencia.Location = new System.Drawing.Point(40, 132);
+            this.txtValorTransferencia.Location = new System.Drawing.Point(41, 114);
             this.txtValorTransferencia.Name = "txtValorTransferencia";
             this.txtValorTransferencia.Size = new System.Drawing.Size(201, 23);
             this.txtValorTransferencia.TabIndex = 1;
             this.txtValorTransferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblCpfDestinatario
+            // lblNomeDestinatario
             // 
-            this.lblCpfDestinatario.AutoSize = true;
-            this.lblCpfDestinatario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCpfDestinatario.Location = new System.Drawing.Point(12, 232);
-            this.lblCpfDestinatario.Name = "lblCpfDestinatario";
-            this.lblCpfDestinatario.Size = new System.Drawing.Size(41, 23);
-            this.lblCpfDestinatario.TabIndex = 2;
-            this.lblCpfDestinatario.Text = "CPF";
+            this.lblNomeDestinatario.AutoSize = true;
+            this.lblNomeDestinatario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNomeDestinatario.Location = new System.Drawing.Point(13, 214);
+            this.lblNomeDestinatario.Name = "lblNomeDestinatario";
+            this.lblNomeDestinatario.Size = new System.Drawing.Size(52, 23);
+            this.lblNomeDestinatario.TabIndex = 2;
+            this.lblNomeDestinatario.Text = "Nome";
             // 
-            // lblNumConta
+            // txtNomeDestinatario
             // 
-            this.lblNumConta.AutoSize = true;
-            this.lblNumConta.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNumConta.Location = new System.Drawing.Point(12, 287);
-            this.lblNumConta.Name = "lblNumConta";
-            this.lblNumConta.Size = new System.Drawing.Size(92, 23);
-            this.lblNumConta.TabIndex = 3;
-            this.lblNumConta.Text = "Num. Conta";
-            // 
-            // txtCpfDestinatario
-            // 
-            this.txtCpfDestinatario.Location = new System.Drawing.Point(59, 232);
-            this.txtCpfDestinatario.Name = "txtCpfDestinatario";
-            this.txtCpfDestinatario.Size = new System.Drawing.Size(195, 23);
-            this.txtCpfDestinatario.TabIndex = 4;
-            this.txtCpfDestinatario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(110, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 23);
-            this.textBox2.TabIndex = 5;
+            this.txtNomeDestinatario.Location = new System.Drawing.Point(71, 214);
+            this.txtNomeDestinatario.Name = "txtNomeDestinatario";
+            this.txtNomeDestinatario.Size = new System.Drawing.Size(184, 23);
+            this.txtNomeDestinatario.TabIndex = 4;
+            this.txtNomeDestinatario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDestinatario
             // 
             this.lblDestinatario.AutoSize = true;
             this.lblDestinatario.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDestinatario.Location = new System.Drawing.Point(85, 198);
+            this.lblDestinatario.Location = new System.Drawing.Point(86, 180);
             this.lblDestinatario.Name = "lblDestinatario";
             this.lblDestinatario.Size = new System.Drawing.Size(111, 21);
             this.lblDestinatario.TabIndex = 6;
@@ -111,18 +93,27 @@
             this.btnMain.UseVisualStyleBackColor = true;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
+            // btnTransferir
+            // 
+            this.btnTransferir.Location = new System.Drawing.Point(93, 292);
+            this.btnTransferir.Name = "btnTransferir";
+            this.btnTransferir.Size = new System.Drawing.Size(94, 23);
+            this.btnTransferir.TabIndex = 8;
+            this.btnTransferir.Text = "Transferir";
+            this.btnTransferir.UseVisualStyleBackColor = true;
+            this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
+            // 
             // TransferenciaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkViolet;
             this.ClientSize = new System.Drawing.Size(274, 450);
+            this.Controls.Add(this.btnTransferir);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblDestinatario);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.txtCpfDestinatario);
-            this.Controls.Add(this.lblNumConta);
-            this.Controls.Add(this.lblCpfDestinatario);
+            this.Controls.Add(this.txtNomeDestinatario);
+            this.Controls.Add(this.lblNomeDestinatario);
             this.Controls.Add(this.txtValorTransferencia);
             this.Controls.Add(this.lblTransferencia);
             this.Name = "TransferenciaForm";
@@ -137,11 +128,10 @@
 
         private System.Windows.Forms.Label lblTransferencia;
         private System.Windows.Forms.TextBox txtValorTransferencia;
-        private System.Windows.Forms.Label lblCpfDestinatario;
-        private System.Windows.Forms.Label lblNumConta;
-        private System.Windows.Forms.TextBox txtCpfDestinatario;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblNomeDestinatario;
+        private System.Windows.Forms.TextBox txtNomeDestinatario;
         private System.Windows.Forms.Label lblDestinatario;
         private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Button btnTransferir;
     }
 }
