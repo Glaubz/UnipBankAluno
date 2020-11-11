@@ -40,8 +40,8 @@ namespace WindowsForms.Forms
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-                _ctlAcesso.ConstructClient(_mdlAcesso); //Constrói o cliente com os dados do banco
-                mdlClient cliente = _ctlAcesso.GetCliente();
+                //_ctlAcesso.ConstructClient(_mdlAcesso); //Constrói o cliente com os dados do banco
+                //mdlClient cliente = _ctlAcesso.GetCliente();
             }
 
         }

@@ -18,6 +18,9 @@ namespace ClientControl
 
             try
             {
+                if(valorSaque < 0)
+                    throw new Exception("O valor do saque nao pode ser negativo");
+
                 ctlConta _ctlConta = new ctlConta();
                 decimal saldoDisponivel = _ctlConta.ValorEmConta(usuario);
                 if (valorSaque > saldoDisponivel)
@@ -36,6 +39,10 @@ namespace ClientControl
                 SqlCmd.Parameters.AddWithValue("@saldo", novoSaldo);
                 SqlCmd.Parameters.AddWithValue("@usuario", usuario);
                 SqlCmd.ExecuteNonQuery();
+
+                string mensagem = "Feito saque de R$" + valorSaque;
+                ctlExtrato _ctlExtrato = new ctlExtrato();
+                _ctlExtrato.Logs(mensagem);
 
                 return novoSaldo;
             }

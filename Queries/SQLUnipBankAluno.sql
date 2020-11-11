@@ -181,4 +181,22 @@ WHERE ac.usuario = 'mago'
 --valida destinatario
 SELECT ac.usuario, cl.nome FROM acesso ac
 JOIN cliente cl ON cl.idAcesso = ac.idAcesso
+WHERE ac.usuario = @destinatario
+OR cl.nome = @destinatario
 
+--criando tabela para colocar os logs
+CREATE TABLE logs(
+	log VARCHAR(100)
+	);
+--esqueci do id pk
+ALTER TABLE logs ADD id INT NOT NULL IDENTITY(1,1) PRIMARY KEY
+
+ALTER TABLE conta ADD idLogs INT
+
+ALTER TABLE conta
+ADD CONSTRAINT conta_logs
+FOREIGN KEY (idLogs)
+REFERENCES logs(id)
+
+--Deletando a tabela de logs, taquei listinha
+DROP TABLE logs

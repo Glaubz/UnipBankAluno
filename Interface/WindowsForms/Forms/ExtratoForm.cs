@@ -17,6 +17,12 @@ namespace WindowsForms.Forms
 
             ctlConta _ctlConta = new ctlConta();
             lblValor.Text = _ctlConta.ValorEmConta(Context.Usuario).ToString();
+            ctlExtrato _ctlExtrato = new ctlExtrato();
+            lblLog1.Text = _ctlExtrato.GetLogs()[4];
+            lblLog2.Text = _ctlExtrato.GetLogs()[3];
+            lblLog3.Text = _ctlExtrato.GetLogs()[2];
+            lblLog4.Text = _ctlExtrato.GetLogs()[1];
+            lblLog5.Text = _ctlExtrato.GetLogs()[0];
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -26,10 +32,5 @@ namespace WindowsForms.Forms
             menuTela.Show();
         }
 
-        private void dgvLogs_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvDados.CurrentRow.Index != -1)
-                txtLog.Text = dgvDados.CurrentRow.Cells[1].Value.ToString();
-        }
     }
 }

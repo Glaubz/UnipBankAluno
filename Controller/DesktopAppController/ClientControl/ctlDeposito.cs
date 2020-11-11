@@ -15,6 +15,9 @@ namespace ClientControl
             SqlConnection SqlConn = new SqlConnection(ConnectionString);
             try
             {
+                if(valorDeposito < 0)
+                    throw new Exception("O valor de deposito nao pode ser negativo");
+
                 ctlConta _ctlConta = new ctlConta();
                 decimal saldoDisponivel = _ctlConta.ValorEmConta(usuario);
 
@@ -31,6 +34,10 @@ namespace ClientControl
                 SqlCmd.Parameters.AddWithValue("@saldo", novoSaldo);
                 SqlCmd.Parameters.AddWithValue("@usuario", usuario);
                 SqlCmd.ExecuteNonQuery();
+
+                string mensagem = "Feito deposito de R$" + valorDeposito;
+                ctlExtrato _ctlExtrato = new ctlExtrato();
+                _ctlExtrato.Logs(mensagem);
 
                 return novoSaldo;
             }

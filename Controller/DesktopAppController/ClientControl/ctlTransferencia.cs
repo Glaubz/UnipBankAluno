@@ -16,6 +16,9 @@ namespace ClientControl
 
             try
             {
+                if (valorTransferencia < 0)
+                    throw new Exception("O valor de transferencia nao pode ser negativo");
+
                 Dictionary<int, string> existeDestinatario = ValidaDestinatario(usuarioDestino);
                 if (existeDestinatario.TryGetValue(0, out string mensagem))
                 {
@@ -46,6 +49,10 @@ namespace ClientControl
                 SqlCmd.Parameters.AddWithValue("@SaldoDestino", novoSaldoDestino);
                 SqlCmd.Parameters.AddWithValue("@UsuarioDestino", usuarioDestino);
                 SqlCmd.ExecuteNonQuery();
+
+                string msg = "Feito transferencia de R$" + valorTransferencia;
+                ctlExtrato _ctlExtrato = new ctlExtrato();
+                _ctlExtrato.Logs(msg);
             }
             catch(Exception ex)
             {
